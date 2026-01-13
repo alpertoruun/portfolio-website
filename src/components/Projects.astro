@@ -1,0 +1,170 @@
+---
+// Projects Section - Showcase key projects with cards
+
+const projects = [
+  {
+    title: "Scalable Voting System",
+    subtitle: "Cloud-Native AWS Application",
+    description: "Engineered a voting system featuring biometric authentication with face recognition. Implemented liveness detection using OpenCV/MediaPipe and designed scalable infrastructure on AWS ECS with AutoScaling policies.",
+    image: "🗳️",
+    technologies: ["AWS ECS", "Python Flask", "OpenCV", "PostgreSQL", "Docker", "CloudWatch"],
+    features: [
+      "Face recognition with liveness detection",
+      "AutoScaling based on CloudWatch metrics",
+      "JWT authentication with secure backend",
+      "Nginx reverse proxy configuration"
+    ],
+    githubUrl: "https://github.com/alpertoruun/VotingAppwithDockerandAWS",
+    period: "2024 - 2025",
+    status: "completed"
+  },
+  {
+    title: "DevOps AI System",
+    subtitle: "LLM-Powered Code Review",
+    description: "Built an automated code review system that analyzes GitLab commits, Merge Requests, and failed pipelines using Large Language Models. Includes custom VS Code extension for IDE integration.",
+    image: "🤖",
+    technologies: ["Python Flask", "RabbitMQ", "Ollama", "Elasticsearch", "VS Code API"],
+    features: [
+      "Automated code review on commits & MRs",
+      "Failed pipeline analysis with AI",
+      "VS Code extension for IDE chat",
+      "Real-time analysis throughput monitoring"
+    ],
+    status: "professional"
+  },
+  {
+    title: "Internal Developer Platform",
+    subtitle: "Backstage-based IDP",
+    description: "Built Getir's central IDP 'Kitchen' enabling self-service infrastructure provisioning. Developers can scaffold microservices, provision HashiCorp Vault, ECR, MongoDB, and enable ArgoCD with a single click.",
+    image: "🍳",
+    technologies: ["Backstage.io", "TypeScript", "HashiCorp Vault", "ArgoCD", "AWS CDK"],
+    features: [
+      "Self-service microservice scaffolding",
+      "Automated Vault & ECR provisioning",
+      "MongoDB & RDS connection setup",
+      "One-click ArgoCD/CI enablement"
+    ],
+    status: "professional"
+  },
+  {
+    title: "RAG DevOps Agent",
+    subtitle: "AI Knowledge Base",
+    description: "Developed a Retrieval-Augmented Generation agent using vector embeddings and semantic search. Streamlines internal issue resolution and knowledge base querying for DevOps teams.",
+    image: "🧠",
+    technologies: ["Python", "Vector DB", "LLMs", "Semantic Search"],
+    features: [
+      "Vector embeddings for document retrieval",
+      "Semantic search capabilities",
+      "Internal knowledge base integration",
+      "Context-aware responses"
+    ],
+    status: "professional"
+  }
+];
+---
+
+<section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-surface-200/50">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-accent-info/10 text-accent-info text-sm font-medium mb-4">
+        Portfolio
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-surface-950 mb-4">
+        Featured Projects
+      </h2>
+      <p class="text-surface-700 max-w-2xl mx-auto">
+        Personal and professional projects showcasing platform engineering expertise
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {projects.map((project, idx) => (
+        <div 
+          class="bento-card p-6 opacity-0 animate-scale-in flex flex-col h-full"
+          style={`animation-delay: ${idx * 0.1}s`}
+        >
+          {/* Header */}
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center text-3xl">
+                {project.image}
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-surface-950">{project.title}</h3>
+                <p class="text-sm text-accent-primary font-medium">{project.subtitle}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              {project.status === 'professional' && (
+                <span class="px-2 py-1 rounded-full bg-accent-secondary/10 text-accent-secondary text-xs font-semibold">
+                  Professional
+                </span>
+              )}
+              {project.githubUrl && (
+                <a 
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="p-2 rounded-lg bg-surface-300 hover:bg-github/20 border border-surface-400/50 hover:border-github/50 transition-all group"
+                  aria-label="View on GitHub"
+                >
+                  <svg class="w-5 h-5 text-surface-700 group-hover:text-github transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Description */}
+          <p class="text-surface-700 text-sm leading-relaxed mb-4">
+            {project.description}
+          </p>
+
+          {/* Features */}
+          <div class="mb-4 flex-1">
+            <h4 class="text-xs uppercase tracking-wider text-surface-600 font-semibold mb-2">Key Features</h4>
+            <ul class="space-y-1.5">
+              {project.features.map((feature) => (
+                <li class="flex items-start gap-2 text-sm text-surface-800">
+                  <svg class="w-4 h-4 text-accent-success flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Technologies */}
+          <div class="pt-4 border-t border-surface-400/30">
+            <div class="flex flex-wrap gap-1.5">
+              {project.technologies.map((tech) => (
+                <span class="px-2 py-1 rounded-md bg-surface-400/30 text-surface-800 text-xs font-medium hover:bg-surface-400/50 transition-colors">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* GitHub CTA */}
+    <div class="mt-12 text-center">
+      <a 
+        href="https://github.com/alpertoruun"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-300 hover:bg-surface-400 border border-surface-400 text-surface-900 font-semibold transition-all hover:-translate-y-0.5"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        View All Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>

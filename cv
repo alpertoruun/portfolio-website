@@ -1,0 +1,170 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[left=0.5in, right=0.5in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{fontawesome}
+\usepackage{xcolor}
+
+% --- AYARLAR ---
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Link Renkleri
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+
+% Başlık Formatı (Section)
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% Liste Ayarları
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt, parsep=0pt}
+
+\begin{document}
+
+% --- HEADER ---
+{\centering
+    {\Huge \textbf{Alper Torun}} \\ \vspace{4pt}
+    {\Large Platform Engineer \& Cloud Solution Architect} \\ \vspace{4pt}
+    
+    % 1. Satır: İletişim
+    \faPhone \: +90 546 851 3544 \quad \textbullet \quad
+    \href{mailto:alpertorun4@hotmail.com}{\faEnvelope \: alpertorun4@hotmail.com} \\ \vspace{3pt}
+    
+    % 2. Satır: Sosyal Medya & Linkler
+    \href{https://www.linkedin.com/in/alper-torun/}{\faLinkedin \: LinkedIn} \quad \textbullet \quad
+    \href{https://github.com/alpertoruun/}{\faGithub \: GitHub} \quad \textbullet \quad
+    \href{https://www.youtube.com/@alpertorunn}{\faYoutubePlay \: YouTube}
+    \par
+}
+
+\vspace{-5pt} 
+
+% --- SUMMARY ---
+\section{Summary}
+AWS Certified Solutions Architect and Certified Kubernetes Administrator (CKA). Experienced Platform Engineer focused on building Internal Developer Platforms (IDP) \textbf{GitHub Actions}, \textbf{ArgoCD}, and \textbf{Backstage}, automating the software delivery lifecycle from infrastructure provisioning (Terraform/CDK) to production. Proven experience in optimizing Kubernetes costs, hardening security in hybrid environments, and developing custom scripts Python and Go.
+
+% --- SKILLS ---
+\section{Technical Skills}
+\begin{itemize}
+    \item \textbf{Cloud \& IaC:} AWS (EKS, Lambda, CloudFront, IAM, OIDC, S3, RDS), \textbf{AWS CDK}, Terraform, \textbf{Atlantis}
+    \item \textbf{Kubernetes \& GitOps:} Docker, K8s, \textbf{ArgoCD}, Helm, Kubeadapt, Falcon-KAC, External Secrets
+    \item \textbf{CI/CD \& Automation:} \textbf{GitHub Actions} (Reusable Workflows), GitLab CI, Go, Python, Bash
+    \item \textbf{Platform Engineering:} \textbf{Backstage.io}, IDP Design, HashiCorp Vault, OpenCost
+    \item \textbf{Observability:} Prometheus, Grafana, ELK Stack, AWS CloudWatch, Athena
+    \item \textbf{Databases \& Backend:} PostgreSQL, MongoDB, DynamoDB, Python Flask, Node.js
+    \item \textbf{AI/ML Ops:} Ollama, Vector Embeddings (RAG), Prompt Engineering
+\end{itemize}
+
+% --- EXPERIENCE ---
+\section{Work Experience}
+
+\textbf{Getir} \hfill Izmir, Turkey (Hybrid) \\ 
+\textit{Platform \& Infrastructure Engineer} \hfill 07/2025 - Present
+\begin{itemize}
+    \item \textbf{Strategic CI/CD Migration (Bitbucket to GitHub):}
+    \begin{itemize}
+        \item Led the migration of \textbf{4000+ repositories} using custom automation tools written in \textbf{Go} and \textbf{Bash}.
+        \item Built a centralized \textbf{GitHub Actions} structure using \textbf{Reusable Workflows} to enforce standards across the organization.
+        \item Created specialized pipelines for diverse workloads: \textbf{Microservices} (Go, Java, Node.js), \textbf{Monorepos}, \textbf{AWS Lambda} (Serverless), and \textbf{Frontend} applications (S3/CloudFront).
+        \item Automated the management of \textbf{ArgoCD manifest repositories} to keep CI pipelines and GitOps delivery in sync.
+        \item Implemented \textbf{AWS OIDC} to eliminate static credentials in pipelines and enforced organization-level security rulesets (CodeQL).
+    \end{itemize}
+    
+    \item \textbf{Internal Developer Platform (IDP) - "Kitchen":}
+    \begin{itemize}
+        \item Built the company's central IDP using \textbf{Backstage}, automating infrastructure provisioning to reduce cognitive load on developers.
+        \item Designed \textbf{Self-Service Templates} enabling developers to: (1) Scaffold production-ready microservices, (2) Provision \textbf{HashiCorp Vault} \& \textbf{ECR} , (3) Configure \textbf{MongoDB} \& \textbf{RDS} connections, and (4) Enable \textbf{ArgoCD/CI} with a single click.
+        \item Developed custom Backstage entity providers to automatically catalog resources from GitHub and AWS.
+    \end{itemize}
+
+    \item \textbf{Infrastructure \& GitOps Management:}
+    \begin{itemize}
+        \item Managed cloud infrastructure code, conducting PR reviews for \textbf{AWS CDK} and maintaining Terraform modules.
+        \item Migrated Terraform workflows to \textbf{Atlantis}, establishing a PR-based approval process and solving state-locking concurrency issues.
+        \item Administered \textbf{ArgoCD} for multi-cluster deployments, managing ApplicationSets and syncing policies.
+        \item Configured \textbf{Nginx Ingress} controllers and managed DNS strategies for internal vs. internet-facing services.
+    \end{itemize}
+
+    \item \textbf{Security, Governance \& Cost:}
+    \begin{itemize}
+        \item Collaborated with Security to deploy \textbf{Falcon-KAC} (Admission Controller) via GitOps for policy enforcement.
+        \item Implemented \textbf{OpenCost} and \textbf{Kubeadapt} with SSO integration, building \textbf{Athena} data pipelines to track spending and optimize node pools (Spot/On-Demand analysis).
+        \item Enhanced developer experience by modifying Slack bots to automate temporary role assignments for MongoDB access.
+\end{itemize}
+
+\vspace{50pt}
+
+\textbf{P.I. Works} \hfill Istanbul, Turkey (Remote) \\
+\textit{Junior DevOps Engineer} \hfill 03/2025 - 07/2025
+\begin{itemize}
+    \item Developed a "DevOps AI" system providing automated code review feedback on GitLab commits, Merge Requests, and failed pipelines using LLMs (Ollama).
+    \item Built the core backend using \textbf{Python Flask} and \textbf{RabbitMQ} for task queuing, integrating with GitLab API to fetch changesets.
+    \item Set up and managed the infrastructure on Kubernetes (RabbitMQ, Elasticsearch, Grafana) to monitor the AI analysis throughput and latency.
+    \item \textbf{VS Code Extension Development:} Extended the system by developing a custom VS Code extension ("DevOps Toolkit").
+    \begin{itemize}
+        \item Integrated features for interactive chat and automated documentation generation directly within the IDE.
+        \item Reduced developer context-switching by bringing AI-powered analysis into the local development environment.
+    \end{itemize}
+\end{itemize}
+
+\vspace{5pt}
+
+\textbf{P.I. Works} \hfill Istanbul, Turkey (Remote) \\
+\textit{Part Time Junior DevOps Engineer} \hfill 10/2023 - 03/2025
+\begin{itemize}
+    \item \textbf{CI/CD Pipeline Engineering:} Maintained and improved GitLab CI/CD pipelines for various microservices. Integrated \textbf{cspell} for automated quality gates and scripted documentation generation using \textbf{Bash} and \textbf{Python}.
+    \item \textbf{Linux System Administration:} Administered Production and Development Linux systems. Performed kernel updates, performance tuning, and security hardening.
+    \item \textbf{Monitoring \& Observability:} Architected monitoring solutions using \textbf{Prometheus}, \textbf{Grafana}, and the \textbf{ELK Stack}. Created custom dashboards for system health and implemented log rotation policies within Kubernetes.
+    \item \textbf{RAG-Based DevOps Agent:} Developed a Retrieval-Augmented Generation (RAG) agent using \textbf{vector embeddings} and semantic search to streamline internal issue resolution and knowledge base querying.
+    \item \textbf{Database \& Dependency Management:} Conducted automated dependency audits (version/license tracking) for PostgreSQL databases, integrated directly into the CI pipelines.
+\end{itemize}
+
+\vspace{5pt}
+
+\textbf{DevOps Intern} \hfill 07/2023 - 10/2023 \\
+P.I. Works \hfill Istanbul, Turkey (Remote)
+\begin{itemize}
+    \item Contributed to GitLab CI/CD improvements and implemented Microsoft Teams notifications for pipeline statuses.
+    \item Automated dependency audits using Bash scripts, gaining foundational experience in DevOps workflows and Linux environments.
+\end{itemize}
+
+\vspace{5pt}
+
+\textbf{Python Developer Intern} \hfill 10/2021 - 02/2022 \\
+AI Aitech \hfill Ankara, Turkey
+\begin{itemize}
+    \item Developed Python applications and participated in code reviews, unit testing, and Git workflow management within a team environment.
+\end{itemize}
+
+% --- PROJECTS ---
+\section{Projects}
+\textbf{Scalable Voting System with Face Recognition} \href{https://github.com/alpertoruun/VotingAppwithDockerandAWS}{(Source Code)} \hfill 03/2024 - 01/2025 \\
+\textit{Tech Stack: AWS (ECS, ECR, CloudWatch, EC2, VPC, RDS, AutoScaling, ELB), PostgreSQL, SQLAlchemy, Docker, Python Flask, OpenCV, MediaPipe}
+\begin{itemize}
+    \item Engineered a cloud-native AWS voting system featuring biometric authentication (OpenCV/MediaPipe) for liveness detection.
+    \item Designed a scalable infrastructure on AWS ECS with AutoScaling policies triggered by CloudWatch metrics.
+    \item Implemented a secure backend with PostgreSQL, SQLAlchemy, and JWT authentication, utilizing Nginx as a reverse proxy.
+\end{itemize}
+
+% --- CERTIFICATIONS ---
+\section{Certifications}
+\begin{itemize}
+    \item \href{https://www.credly.com/badges/546d92e0-f4b8-46fd-91cd-4c01fded5f73/public_url}{\textbf{Certified Kubernetes Administrator (CKA)}} \hfill Oct 2025
+    \item \href{https://www.credly.com/badges/16fd9c98-14f6-43e1-b8a8-886ca3132686/linked_in_profile}{\textbf{AWS Certified Solutions Architect – Associate}} \hfill May 2024
+\end{itemize}
+
+% --- EDUCATION ---
+\section{Education}
+\textbf{Bachelor of Engineering - Computer Engineering} (Full Scholarship) \hfill Graduated: 01/2025 \\
+Baskent University \hfill Ankara, Turkey \\
+\textit{Gained strong foundation in core CS principles (algorithms, data structures, databases, networks) and completed English preparatory school.}
+
+\end{document}
