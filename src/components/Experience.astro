@@ -4,32 +4,73 @@
 const experiences = [
   {
     company: "Getir",
-    role: "Platform & Infrastructure Engineer",
-    period: "July 2025 - Present",
+    role: "Platform & Infrastructure Engineer II",
+    period: "January 2026 - Present",
     location: "Izmir, Turkey (Hybrid)",
     type: "current",
     highlights: [
       {
+        title: "Karpenter Cost Optimization",
+        description: "Drove a cluster-wide Karpenter tuning initiative: redesigned NodePools, consolidation policies (WhenUnderutilized + WhenEmpty), and Spot/On-Demand distribution in production.",
+        metric: "~30% cost cut",
+        icon: "💰"
+      },
+      {
+        title: "Blue-Green Node Migration",
+        description: "Migrated ~1000 nodes from legacy to new NodePools via blue-green strategy with Bash automation and a nightly cron-driven drain workflow — zero customer-impacting downtime.",
+        metric: "~1000 nodes",
+        icon: "🔄"
+      },
+      {
+        title: "Karpenter on EKS Fargate",
+        description: "Led migration of Karpenter controllers onto EKS Fargate across 5 clusters, eliminating ~50 always-on management nodes. Designed IAM roles, Fargate profiles, and HA tolerations.",
+        metric: "5 clusters",
+        icon: "⎈"
+      },
+      {
+        title: "Observability Pipeline",
+        description: "Built a Fargate-native logging pipeline (CloudWatch → Kinesis Firehose → New Relic) for Karpenter and control-plane logs. Designed dashboards and Slack-integrated alerts for proactive on-call.",
+        metric: "Proactive alerting",
+        icon: "📊"
+      },
+      {
+        title: "Multi-Cluster Segregation",
+        description: "Segregated Kubernetes clusters by business vertical (Payment, Marketplace) for fault isolation. Implemented ArgoCD App of Apps to orchestrate deployments across clusters at scale.",
+        metric: "Vertical isolation",
+        icon: "🏗️"
+      }
+    ],
+    technologies: ["Karpenter", "EKS Fargate", "ArgoCD", "New Relic", "Kinesis Firehose", "CloudWatch", "Bash", "Kubernetes"]
+  },
+  {
+    company: "Getir",
+    role: "Platform & Infrastructure Engineer I",
+    period: "July 2025 - January 2026",
+    location: "Izmir, Turkey (Hybrid)",
+    type: "recent",
+    promotedTo: "Engineer II",
+    highlights: [
+      {
         title: "CI/CD Migration at Scale",
-        description: "Led migration of 4000+ repositories from Bitbucket to GitHub using custom Go/Bash automation tools.",
+        description: "Led migration of 4000+ repositories from Bitbucket to GitHub using custom Go/Bash automation. Built reusable GitHub Actions workflows, adopted AWS OIDC, and enforced CodeQL rulesets org-wide.",
         metric: "4000+ repos",
         icon: "🔄"
       },
       {
         title: "Internal Developer Platform",
-        description: "Built 'Kitchen' - the company's central IDP using Backstage, enabling self-service infrastructure provisioning.",
-        metric: "Reduced cognitive load",
+        description: "Built 'Kitchen' - the company's central IDP on Backstage, enabling self-service microservice scaffolding, Vault/ECR provisioning, and one-click ArgoCD/CI enablement.",
+        metric: "400+ developers",
         icon: "🛠️"
       },
       {
         title: "GitOps & Infrastructure",
-        description: "Managed multi-cluster ArgoCD deployments, AWS CDK/Terraform modules, and Atlantis workflows.",
+        description: "Managed multi-cluster ArgoCD deployments, AWS CDK/Terraform modules, and migrated Terraform workflows to Atlantis with PR-based approvals.",
         metric: "Multi-cluster",
         icon: "⎈"
       },
       {
         title: "Security & Cost Optimization",
-        description: "Implemented OpenCost with Athena pipelines for spend tracking and Spot/On-Demand analysis.",
+        description: "Deployed Falcon-KAC admission controller via GitOps and implemented OpenCost + Kubeadapt with Athena pipelines for spend tracking and Spot/On-Demand analysis.",
         metric: "Cost visibility",
         icon: "💰"
       }
@@ -182,6 +223,14 @@ const experiences = [
                     </div>
                     <p class="text-accent-primary font-semibold">{exp.role}</p>
                     <p class="text-sm text-surface-600 mt-1">{exp.location}</p>
+                    {exp.promotedTo && (
+                      <span class="inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full bg-accent-success/10 text-accent-success text-xs font-semibold border border-accent-success/20">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+                        </svg>
+                        Promoted to {exp.promotedTo}
+                      </span>
+                    )}
                   </div>
                 </div>
 
