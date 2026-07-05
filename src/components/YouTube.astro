@@ -1,6 +1,7 @@
 ---
 // YouTube Channel Highlights Section
 // You can add your video IDs here to feature them
+import { Icon } from 'astro-icon/components';
 
 const featuredVideos = [
   {
@@ -26,54 +27,44 @@ const channelStats = {
 <section id="youtube" class="py-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <!-- Section Header -->
-    <div class="text-center mb-16">
-      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 text-sm font-medium mb-4">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-        YouTube Channel
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-surface-950 mb-4">
-        Video Content
+    <div class="mb-14 max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-ink-950 mb-3">
+        Video content
       </h2>
-      <p class="text-surface-700 max-w-2xl mx-auto">
-        Sharing knowledge about DevOps, Platform Engineering, and Cloud technologies
+      <p class="text-ink-600 leading-relaxed">
+        Sharing knowledge about DevOps, Platform Engineering, and Cloud technologies.
       </p>
     </div>
 
     <!-- Channel Card -->
     <div class="max-w-4xl mx-auto mb-12">
-      <a 
+      <a
         href={channelStats.channelUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="group block"
       >
-        <div class="bento-card p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 hover:border-red-500/30 transition-all">
-          <!-- Channel Icon -->
-          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center shadow-lg shadow-red-500/25">
-            <svg class="w-10 h-10 sm:w-12 sm:h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
+        <div class="panel bg-white p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 hover:border-red-500/30">
+          <!-- Channel Icon (real brand red — intentional, not decorative) -->
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-red-500 flex items-center justify-center shrink-0">
+            <Icon name="ph:youtube-logo-bold" class="w-10 h-10 sm:w-12 sm:h-12 text-white" />
           </div>
 
           <!-- Channel Info -->
           <div class="flex-1 text-center sm:text-left">
-            <h3 class="text-2xl font-bold text-surface-950 group-hover:text-red-500 transition-colors">
+            <h3 class="text-2xl font-display font-bold text-ink-950 group-hover:text-red-500 transition-colors">
               Alper Torun
             </h3>
-            <p class="text-surface-600 mb-3">{channelStats.channelName}</p>
-            <p class="text-surface-700">
+            <p class="text-ink-500 mb-3">{channelStats.channelName}</p>
+            <p class="text-ink-600">
               DevOps tutorials, Kubernetes deep-dives, and Platform Engineering content
             </p>
           </div>
 
           <!-- Subscribe Button -->
           <div class="flex-shrink-0">
-            <div class="inline-flex items-center gap-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl transition-all shadow-lg shadow-red-500/25 group-hover:shadow-red-500/40">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-              </svg>
+            <div class="inline-flex items-center gap-2 px-6 py-3 bg-red-500 group-hover:bg-red-600 text-white font-semibold rounded-xl transition-all">
+              <Icon name="ph:play-fill" class="w-5 h-5" />
               Subscribe
             </div>
           </div>
@@ -84,12 +75,12 @@ const channelStats = {
     <!-- Featured Videos Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {featuredVideos.map((video, idx) => (
-        <div 
-          class="bento-card overflow-hidden opacity-0 animate-scale-in"
+        <div
+          class="panel bg-white overflow-hidden opacity-0 animate-scale-in"
           style={`animation-delay: ${idx * 0.1}s`}
         >
-          <!-- Video Thumbnail/Embed -->
-          <div class="aspect-video bg-surface-300 relative group">
+          <!-- Video Embed -->
+          <div class="aspect-video bg-ink-100 relative">
             <iframe
               src={`https://www.youtube.com/embed/${video.id}`}
               title={video.title}
@@ -100,17 +91,12 @@ const channelStats = {
               loading="lazy"
             ></iframe>
           </div>
-          
+
           <!-- Video Info -->
           <div class="p-4">
-            <h3 class="font-semibold text-surface-950 line-clamp-2">
+            <h3 class="font-semibold text-ink-900 line-clamp-2">
               {video.title}
             </h3>
-            {video.description && (
-              <p class="text-sm text-surface-600 line-clamp-2 mt-1">
-                {video.description}
-              </p>
-            )}
           </div>
         </div>
       ))}
@@ -118,16 +104,14 @@ const channelStats = {
 
     <!-- View All CTA -->
     <div class="mt-12 text-center">
-      <a 
+      <a
         href={channelStats.channelUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-surface-300 hover:bg-red-500/10 border border-surface-400 hover:border-red-500/30 text-surface-900 hover:text-red-500 font-semibold transition-all hover:-translate-y-0.5"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-transparent hover:bg-red-500/10 border border-ink-300 hover:border-red-500/30 text-ink-900 hover:text-red-500 font-semibold transition-all active:scale-[0.98]"
       >
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-        </svg>
-        View All Videos
+        <Icon name="ph:youtube-logo-bold" class="w-5 h-5" />
+        View all videos
       </a>
     </div>
   </div>

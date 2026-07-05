@@ -1,84 +1,85 @@
 ---
-// Tech Stack Bento Grid - Showcasing skills with visual flair
-
-interface TechItem {
-  name: string;
-  icon: string;
-  color: string;
-  category: string;
-}
+// Tech Stack — bento grid with real brand colors as small identifiers, not full-fill pills.
+import { Icon } from 'astro-icon/components';
 
 const techCategories = [
   {
     title: "Cloud & Infrastructure",
-    icon: "☁️",
+    icon: "ph:cloud-bold",
+    span: "md:col-span-2 lg:col-span-2",
     items: [
-      { name: "AWS", color: "aws" },
-      { name: "EKS", color: "aws" },
-      { name: "Fargate", color: "aws" },
-      { name: "Lambda", color: "aws" },
-      { name: "CloudFront", color: "aws" },
-      { name: "S3", color: "aws" },
-      { name: "RDS", color: "aws" },
-    ]
-  },
-  {
-    title: "Infrastructure as Code",
-    icon: "🏗️",
-    items: [
-      { name: "Terraform", color: "terraform" },
-      { name: "AWS CDK", color: "aws" },
-      { name: "Atlantis", color: "terraform" },
+      { name: "AWS", color: "#c9720a" },
+      { name: "EKS", color: "#c9720a" },
+      { name: "Fargate", color: "#c9720a" },
+      { name: "Lambda", color: "#c9720a" },
+      { name: "CloudFront", color: "#c9720a" },
+      { name: "S3", color: "#c9720a" },
+      { name: "RDS", color: "#c9720a" },
     ]
   },
   {
     title: "Kubernetes & GitOps",
-    icon: "⎈",
+    icon: "ph:cube-bold",
+    span: "",
     items: [
-      { name: "Kubernetes", color: "kubernetes" },
-      { name: "Docker", color: "docker" },
-      { name: "ArgoCD", color: "argocd" },
-      { name: "Helm", color: "kubernetes" },
-      { name: "Karpenter", color: "kubernetes" },
+      { name: "Kubernetes", color: "#326ce5" },
+      { name: "Docker", color: "#2496ed" },
+      { name: "ArgoCD", color: "#d15a2e" },
+      { name: "Helm", color: "#326ce5" },
+      { name: "Karpenter", color: "#326ce5" },
+    ]
+  },
+  {
+    title: "Infrastructure as Code",
+    icon: "ph:stack-bold",
+    span: "",
+    items: [
+      { name: "Terraform", color: "#7b42bc" },
+      { name: "AWS CDK", color: "#c9720a" },
+      { name: "Atlantis", color: "#7b42bc" },
     ]
   },
   {
     title: "CI/CD & Automation",
-    icon: "🚀",
+    icon: "ph:arrows-clockwise-bold",
+    span: "",
     items: [
-      { name: "GitHub Actions", color: "github" },
-      { name: "GitLab CI", color: "argocd" },
-      { name: "Bash", color: "accent-success" },
+      { name: "GitHub Actions", color: "#238636" },
+      { name: "GitLab CI", color: "#d15a2e" },
+      { name: "Bash", color: "#15803d" },
     ]
   },
   {
     title: "Platform Engineering",
-    icon: "🛠️",
+    icon: "ph:toolbox-bold",
+    span: "",
     items: [
-      { name: "Backstage.io", color: "backstage" },
-      { name: "HashiCorp Vault", color: "accent-secondary" },
-      { name: "OpenCost", color: "accent-primary" },
+      { name: "Backstage.io", color: "#0d9488" },
+      { name: "HashiCorp Vault", color: "#9f123c" },
+      { name: "OpenCost", color: "#9f123c" },
     ]
   },
   {
     title: "Languages",
-    icon: "💻",
+    icon: "ph:code-bold",
+    span: "",
     items: [
-      { name: "Go", color: "docker" },
-      { name: "Python", color: "accent-warning" },
-      { name: "TypeScript", color: "kubernetes" },
-      { name: "Bash", color: "accent-success" },
+      { name: "Go", color: "#2496ed" },
+      { name: "Python", color: "#c9720a" },
+      { name: "TypeScript", color: "#326ce5" },
+      { name: "Bash", color: "#15803d" },
     ]
   },
   {
     title: "Observability",
-    icon: "📊",
+    icon: "ph:chart-line-bold",
+    span: "md:col-span-2 lg:col-span-1",
     items: [
-      { name: "Prometheus", color: "argocd" },
-      { name: "Grafana", color: "accent-warning" },
-      { name: "New Relic", color: "accent-primary" },
-      { name: "ELK Stack", color: "accent-info" },
-      { name: "CloudWatch", color: "aws" },
+      { name: "Prometheus", color: "#d15a2e" },
+      { name: "Grafana", color: "#c9720a" },
+      { name: "New Relic", color: "#9f123c" },
+      { name: "ELK Stack", color: "#326ce5" },
+      { name: "CloudWatch", color: "#c9720a" },
     ]
   }
 ];
@@ -86,39 +87,33 @@ const techCategories = [
 
 <section id="tech" class="py-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <span class="inline-block px-4 py-1.5 rounded-full bg-accent-primary/10 text-accent-primary text-sm font-medium mb-4">
-        Technical Arsenal
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-surface-950 mb-4">
-        Tech Stack & Expertise
+    <!-- Section Header (left-aligned — breaks the centered-hero-then-centered-everything rhythm) -->
+    <div class="mb-14 max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-ink-950 mb-3">
+        Tech stack &amp; expertise
       </h2>
-      <p class="text-surface-700 max-w-2xl mx-auto">
-        Building robust, scalable systems with modern cloud-native technologies
+      <p class="text-ink-600 leading-relaxed">
+        Robust, scalable systems built on modern cloud-native tooling.
       </p>
     </div>
 
     <!-- Bento Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {techCategories.map((category, idx) => (
-        <div 
-          class={`bento-card p-6 opacity-0 animate-scale-in ${idx === 0 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+        <div
+          class={`panel p-6 opacity-0 animate-scale-in ${category.span}`}
           style={`animation-delay: ${idx * 0.1}s`}
         >
           <div class="flex items-center gap-3 mb-4">
-            <span class="text-2xl">{category.icon}</span>
-            <h3 class="text-lg font-semibold text-surface-900">{category.title}</h3>
+            <span class="flex items-center justify-center w-9 h-9 rounded-lg bg-ink-100 text-ink-800">
+              <Icon name={category.icon} class="w-5 h-5" />
+            </span>
+            <h3 class="text-base font-semibold text-ink-900">{category.title}</h3>
           </div>
           <div class="flex flex-wrap gap-2">
             {category.items.map((item) => (
-              <span 
-                class={`px-3 py-1.5 rounded-lg text-sm font-medium bg-${item.color}/10 text-${item.color} border border-${item.color}/20 hover:bg-${item.color}/20 transition-colors cursor-default`}
-                style={`
-                  background-color: var(--color-${item.color}, rgba(99, 102, 241, 0.1));
-                  color: var(--color-${item.color}-text, currentColor);
-                `}
-              >
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-ink-50 text-ink-700 border border-ink-200">
+                <span class="w-1.5 h-1.5 rounded-full" style={`background-color: ${item.color}`}></span>
                 {item.name}
               </span>
             ))}
@@ -127,83 +122,11 @@ const techCategories = [
       ))}
     </div>
 
-    <!-- Highlight Badge -->
-    <div class="mt-8 flex justify-center">
-      <div class="inline-flex items-center gap-4 px-6 py-4 rounded-2xl bg-gradient-to-r from-kubernetes/10 via-surface-300 to-argocd/10 border border-surface-400/50">
-        <div class="flex items-center gap-2">
-          <span class="text-kubernetes font-semibold">⎈ Kubernetes</span>
-          <span class="text-surface-600">+</span>
-          <span class="text-argocd font-semibold">ArgoCD</span>
-          <span class="text-surface-600">+</span>
-          <span class="text-backstage font-semibold">Backstage</span>
-        </div>
-        <span class="text-surface-600">=</span>
-        <span class="text-accent-primary font-bold">Modern Platform Engineering</span>
-      </div>
+    <!-- Highlight strip -->
+    <div class="mt-8 panel px-6 py-5 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+      <span class="font-display font-semibold text-ink-900">Kubernetes + ArgoCD + Backstage</span>
+      <span class="hidden sm:inline text-ink-400">—</span>
+      <span class="text-ink-500">modern platform engineering, run at scale.</span>
     </div>
   </div>
 </section>
-
-<style>
-  /* Custom color styling for tech badges */
-  .bento-card span[class*="bg-aws"] {
-    background-color: rgba(255, 153, 0, 0.15);
-    color: #ff9900;
-    border-color: rgba(255, 153, 0, 0.3);
-  }
-  .bento-card span[class*="bg-kubernetes"] {
-    background-color: rgba(50, 108, 229, 0.15);
-    color: #326ce5;
-    border-color: rgba(50, 108, 229, 0.3);
-  }
-  .bento-card span[class*="bg-docker"] {
-    background-color: rgba(36, 150, 237, 0.15);
-    color: #2496ed;
-    border-color: rgba(36, 150, 237, 0.3);
-  }
-  .bento-card span[class*="bg-argocd"] {
-    background-color: rgba(239, 123, 77, 0.15);
-    color: #ef7b4d;
-    border-color: rgba(239, 123, 77, 0.3);
-  }
-  .bento-card span[class*="bg-terraform"] {
-    background-color: rgba(123, 66, 188, 0.15);
-    color: #7b42bc;
-    border-color: rgba(123, 66, 188, 0.3);
-  }
-  .bento-card span[class*="bg-github"] {
-    background-color: rgba(35, 134, 54, 0.15);
-    color: #238636;
-    border-color: rgba(35, 134, 54, 0.3);
-  }
-  .bento-card span[class*="bg-backstage"] {
-    background-color: rgba(155, 240, 225, 0.15);
-    color: #9bf0e1;
-    border-color: rgba(155, 240, 225, 0.3);
-  }
-  .bento-card span[class*="bg-accent-primary"] {
-    background-color: rgba(99, 102, 241, 0.15);
-    color: #6366f1;
-    border-color: rgba(99, 102, 241, 0.3);
-  }
-  .bento-card span[class*="bg-accent-secondary"] {
-    background-color: rgba(139, 92, 246, 0.15);
-    color: #8b5cf6;
-    border-color: rgba(139, 92, 246, 0.3);
-  }
-  .bento-card span[class*="bg-accent-success"] {
-    background-color: rgba(16, 185, 129, 0.15);
-    color: #10b981;
-    border-color: rgba(16, 185, 129, 0.3);
-  }
-  .bento-card span[class*="bg-accent-warning"] {
-    background-color: rgba(245, 158, 11, 0.15);
-    color: #f59e0b;
-    border-color: rgba(245, 158, 11, 0.3);
-  }
-  .bento-card span[class*="bg-accent-info"] {
-    background-color: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
-    border-color: rgba(59, 130, 246, 0.3);
-  }
-</style>

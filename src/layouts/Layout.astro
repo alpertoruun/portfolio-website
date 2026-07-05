@@ -8,7 +8,7 @@ const { title, description = "Platform Engineer & Cloud Solution Architect build
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,49 +24,55 @@ const { title, description = "Platform Engineer & Cloud Solution Architect build
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-surface-100 text-surface-900 font-sans antialiased overflow-x-hidden">
-    <!-- Background effects -->
-    <div class="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
-    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="fixed bottom-0 right-1/4 w-[400px] h-[400px] bg-accent-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
-    
+  <body class="bg-ink-50 text-ink-900 font-sans antialiased overflow-x-hidden">
+    <!-- Fixed grain texture — adds surface, never a purple/blue AI glow -->
+    <div class="fixed inset-0 bg-noise opacity-[0.03] pointer-events-none mix-blend-multiply"></div>
+
     <!-- Content -->
     <div class="relative z-10">
       <slot />
     </div>
 
-    <!-- Smooth scroll & View Transitions -->
+    <!-- Smooth scroll & global styles -->
     <style is:global>
       html {
         scroll-behavior: smooth;
       }
-      
+
       ::selection {
-        background-color: rgb(99 102 241 / 0.3);
-        color: #fff;
+        background-color: rgb(159 18 60 / 0.18);
+        color: #100f0d;
       }
-      
+
       /* Scrollbar styling */
       ::-webkit-scrollbar {
         width: 8px;
       }
-      
+
       ::-webkit-scrollbar-track {
-        background: #18181b;
+        background: #eeeeeb;
       }
-      
+
       ::-webkit-scrollbar-thumb {
-        background: #3f3f46;
+        background: #c8c6bc;
         border-radius: 4px;
       }
-      
+
       ::-webkit-scrollbar-thumb:hover {
-        background: #52525b;
+        background: #a3a096;
+      }
+
+      /* Visible focus ring for keyboard navigation */
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #9f123c;
+        outline-offset: 2px;
+        border-radius: 4px;
       }
 
       /* Staggered animation delays */
@@ -79,29 +85,14 @@ const { title, description = "Platform Engineer & Cloud Solution Architect build
       .stagger-7 { animation-delay: 0.7s; }
       .stagger-8 { animation-delay: 0.8s; }
 
-      /* Card hover effects */
-      .bento-card {
-        @apply relative overflow-hidden rounded-2xl border border-surface-400/50 bg-surface-200/80 backdrop-blur-sm transition-all duration-300;
-      }
-      
-      .bento-card::before {
-        content: '';
-        @apply absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 opacity-0 transition-opacity duration-300;
-      }
-      
-      .bento-card:hover::before {
-        @apply opacity-100;
-      }
-      
-      .bento-card:hover {
-        @apply border-surface-500 shadow-lg shadow-accent-primary/5 -translate-y-1;
+      /* Card surface used across the page — one shape system, sharp elevation */
+      .panel {
+        @apply relative overflow-hidden rounded-2xl border border-ink-200 bg-white transition-all duration-300;
       }
 
-      /* Gradient text */
-      .gradient-text {
-        @apply bg-gradient-to-r from-accent-primary via-accent-glow to-accent-secondary bg-clip-text text-transparent;
-        background-size: 200% 200%;
-        animation: gradient 8s ease infinite;
+      .panel:hover {
+        @apply border-ink-300 -translate-y-1;
+        box-shadow: 0 1px 2px rgba(26,24,21,0.04), 0 24px 48px -20px rgba(26,24,21,0.16);
       }
     </style>
   </body>

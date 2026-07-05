@@ -7,6 +7,7 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import YouTube from '../components/YouTube.astro';
 import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components';
 
 const pageTitle = "Alper Torun | Platform Engineer & Cloud Architect";
 const pageDescription = "Platform Engineer specializing in Kubernetes, GitOps, and Internal Developer Platforms. AWS Solutions Architect & CKA certified. Building scalable infrastructure at Getir.";
@@ -14,88 +15,82 @@ const pageDescription = "Platform Engineer specializing in Kubernetes, GitOps, a
 
 <Layout title={pageTitle} description={pageDescription}>
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-surface-100/80 backdrop-blur-lg border-b border-surface-400/30">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-ink-50/85 backdrop-blur-lg border-b border-ink-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-3 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center shadow-lg shadow-accent-primary/20 group-hover:shadow-accent-primary/40 transition-shadow">
-            <span class="text-white font-bold text-sm">AT</span>
+          <div class="w-9 h-9 rounded-xl bg-ink-950 flex items-center justify-center">
+            <span class="text-white font-display font-bold text-sm">AT</span>
           </div>
-          <span class="font-semibold text-surface-950 hidden sm:block">Alper Torun</span>
+          <span class="font-semibold text-ink-950 hidden sm:block">Alper Torun</span>
         </a>
 
         <!-- Navigation Links -->
         <div class="hidden md:flex items-center gap-1">
-          <a href="#tech" class="px-4 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-surface-950 hover:bg-surface-300/50 transition-all">
+          <a href="#tech" class="px-4 py-2 rounded-lg text-sm font-medium text-ink-600 hover:text-ink-950 hover:bg-ink-100 transition-all">
             Tech Stack
           </a>
-          <a href="#certifications" class="px-4 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-surface-950 hover:bg-surface-300/50 transition-all">
+          <a href="#certifications" class="px-4 py-2 rounded-lg text-sm font-medium text-ink-600 hover:text-ink-950 hover:bg-ink-100 transition-all">
             Certifications
           </a>
-          <a href="#experience" class="px-4 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-surface-950 hover:bg-surface-300/50 transition-all">
+          <a href="#experience" class="px-4 py-2 rounded-lg text-sm font-medium text-ink-600 hover:text-ink-950 hover:bg-ink-100 transition-all">
             Experience
           </a>
-          <a href="#projects" class="px-4 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-surface-950 hover:bg-surface-300/50 transition-all">
+          <a href="#projects" class="px-4 py-2 rounded-lg text-sm font-medium text-ink-600 hover:text-ink-950 hover:bg-ink-100 transition-all">
             Projects
           </a>
-          <a href="#youtube" class="px-4 py-2 rounded-lg text-sm font-medium text-surface-700 hover:text-surface-950 hover:bg-surface-300/50 transition-all">
+          <a href="#youtube" class="px-4 py-2 rounded-lg text-sm font-medium text-ink-600 hover:text-ink-950 hover:bg-ink-100 transition-all">
             YouTube
           </a>
         </div>
 
         <!-- CTA Button -->
         <div class="flex items-center gap-3">
-          <a 
+          <a
             href="mailto:alpertorun4@hotmail.com"
-            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-accent-primary hover:bg-accent-primary/90 text-white text-sm font-semibold rounded-xl transition-all shadow-lg shadow-accent-primary/20 hover:shadow-accent-primary/30"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-ink-950 hover:bg-ink-900 text-white text-sm font-semibold rounded-xl transition-all active:scale-[0.98]"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+            <Icon name="ph:envelope-simple-bold" class="w-4 h-4" />
             Contact
           </a>
 
           <!-- Mobile Menu Button -->
-          <button 
+          <button
             id="mobile-menu-btn"
-            class="md:hidden p-2 rounded-lg bg-surface-300/50 hover:bg-surface-300 border border-surface-400/50 transition-colors"
+            class="md:hidden p-2 rounded-lg bg-ink-100 hover:bg-ink-200 border border-ink-200 transition-colors"
             aria-label="Toggle menu"
           >
-            <svg class="w-5 h-5 text-surface-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
+            <Icon name="ph:list-bold" class="w-5 h-5 text-ink-800" />
           </button>
         </div>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-surface-400/30 bg-surface-100/95 backdrop-blur-lg">
+    <div id="mobile-menu" class="hidden md:hidden border-t border-ink-200 bg-ink-50/95 backdrop-blur-lg">
       <div class="px-4 py-4 space-y-1">
-        <a href="#tech" class="block px-4 py-3 rounded-xl text-surface-800 hover:bg-surface-300/50 font-medium transition-colors">
+        <a href="#tech" class="block px-4 py-3 rounded-xl text-ink-800 hover:bg-ink-100 font-medium transition-colors">
           Tech Stack
         </a>
-        <a href="#certifications" class="block px-4 py-3 rounded-xl text-surface-800 hover:bg-surface-300/50 font-medium transition-colors">
+        <a href="#certifications" class="block px-4 py-3 rounded-xl text-ink-800 hover:bg-ink-100 font-medium transition-colors">
           Certifications
         </a>
-        <a href="#experience" class="block px-4 py-3 rounded-xl text-surface-800 hover:bg-surface-300/50 font-medium transition-colors">
+        <a href="#experience" class="block px-4 py-3 rounded-xl text-ink-800 hover:bg-ink-100 font-medium transition-colors">
           Experience
         </a>
-        <a href="#projects" class="block px-4 py-3 rounded-xl text-surface-800 hover:bg-surface-300/50 font-medium transition-colors">
+        <a href="#projects" class="block px-4 py-3 rounded-xl text-ink-800 hover:bg-ink-100 font-medium transition-colors">
           Projects
         </a>
-        <a href="#youtube" class="block px-4 py-3 rounded-xl text-surface-800 hover:bg-surface-300/50 font-medium transition-colors">
+        <a href="#youtube" class="block px-4 py-3 rounded-xl text-ink-800 hover:bg-ink-100 font-medium transition-colors">
           YouTube
         </a>
-        <a 
+        <a
           href="mailto:alpertorun4@hotmail.com"
-          class="flex items-center justify-center gap-2 px-4 py-3 mt-2 bg-accent-primary text-white font-semibold rounded-xl"
+          class="flex items-center justify-center gap-2 px-4 py-3 mt-2 bg-ink-950 text-white font-semibold rounded-xl"
         >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
-          Contact Me
+          <Icon name="ph:envelope-simple-bold" class="w-4 h-4" />
+          Contact
         </a>
       </div>
     </div>
