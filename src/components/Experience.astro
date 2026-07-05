@@ -12,31 +12,31 @@ const experiences = [
     highlights: [
       {
         title: "Karpenter Cost Optimization",
-        description: "Drove a cluster-wide Karpenter tuning initiative: redesigned NodePools, consolidation policies (WhenUnderutilized + WhenEmpty), and Spot/On-Demand distribution in production.",
+        description: "Retuned Karpenter cluster-wide: new NodePools, consolidation policies (WhenUnderutilized + WhenEmpty), and a reworked Spot/On-Demand split in production.",
         metric: "~30% cost cut",
         icon: "ph:coin-bold"
       },
       {
         title: "Blue-Green Node Migration",
-        description: "Migrated ~1000 nodes from legacy to new NodePools via blue-green strategy with Bash automation and a nightly cron-driven drain workflow — zero customer-impacting downtime.",
+        description: "Moved about 1000 nodes from the old NodePools to the new ones using a blue-green strategy, Bash automation, and a nightly cron job that drained nodes overnight. Nobody outside the team noticed it happened.",
         metric: "~1000 nodes",
         icon: "ph:arrows-left-right-bold"
       },
       {
         title: "Karpenter on EKS Fargate",
-        description: "Led migration of Karpenter controllers onto EKS Fargate across 5 clusters, eliminating ~50 always-on management nodes. Designed IAM roles, Fargate profiles, and HA tolerations.",
+        description: "Moved the Karpenter controllers themselves onto EKS Fargate across 5 clusters, which retired about 50 always-on management nodes we no longer needed. Had to work out the IAM roles, Fargate profiles, and HA tolerations from scratch.",
         metric: "5 clusters",
         icon: "ph:cube-bold"
       },
       {
         title: "Observability Pipeline",
-        description: "Built a Fargate-native logging pipeline (CloudWatch → Kinesis Firehose → New Relic) for Karpenter and control-plane logs. Designed dashboards and Slack-integrated alerts for proactive on-call.",
+        description: "Built a Fargate-native logging pipeline for Karpenter and control-plane logs: CloudWatch to Kinesis Firehose to New Relic. Added dashboards and Slack alerts so on-call finds out before a user does.",
         metric: "Proactive alerting",
         icon: "ph:chart-line-bold"
       },
       {
         title: "Multi-Cluster Segregation",
-        description: "Segregated Kubernetes clusters by business vertical (Payment, Marketplace) for fault isolation. Implemented ArgoCD App of Apps to orchestrate deployments across clusters at scale.",
+        description: "Split Kubernetes clusters by business vertical, Payment and Marketplace, so a problem in one can't take down the other. Used ArgoCD's App of Apps pattern to manage deployments across all of them from one place.",
         metric: "Vertical isolation",
         icon: "ph:stack-bold"
       }
@@ -52,26 +52,26 @@ const experiences = [
     promotedTo: "Engineer II",
     highlights: [
       {
-        title: "CI/CD Migration at Scale",
-        description: "Led migration of 4000+ repositories from Bitbucket to GitHub using custom Go/Bash automation. Built reusable GitHub Actions workflows, adopted AWS OIDC, and enforced CodeQL rulesets org-wide.",
+        title: "Bitbucket to GitHub Migration",
+        description: "Moved 4000+ repositories from Bitbucket to GitHub with Go and Bash scripts I wrote for the migration. Along the way, built reusable GitHub Actions workflows, switched to AWS OIDC instead of long-lived credentials, and rolled out CodeQL rulesets company-wide.",
         metric: "4000+ repos",
         icon: "ph:arrows-left-right-bold"
       },
       {
         title: "Internal Developer Platform",
-        description: "Built 'Kitchen' - the company's central IDP on Backstage, enabling self-service microservice scaffolding, Vault/ECR provisioning, and one-click ArgoCD/CI enablement.",
+        description: "Built 'Kitchen,' Getir's internal developer platform, on top of Backstage. Teams scaffold microservices, provision Vault and ECR, and set up ArgoCD and CI themselves, in one click, instead of filing a ticket and waiting.",
         metric: "400+ developers",
         icon: "ph:wrench-bold"
       },
       {
         title: "GitOps & Infrastructure",
-        description: "Managed multi-cluster ArgoCD deployments, AWS CDK/Terraform modules, and migrated Terraform workflows to Atlantis with PR-based approvals.",
+        description: "Managed ArgoCD across multiple clusters, wrote the AWS CDK and Terraform modules behind them, and moved our Terraform workflows to Atlantis, so changes get approved through a pull request instead of someone running apply from their laptop.",
         metric: "Multi-cluster",
         icon: "ph:cube-bold"
       },
       {
         title: "Security & Cost Optimization",
-        description: "Deployed Falcon-KAC admission controller via GitOps and implemented OpenCost + Kubeadapt with Athena pipelines for spend tracking and Spot/On-Demand analysis.",
+        description: "Rolled out the Falcon-KAC admission controller through GitOps, then set up OpenCost with Kubeadapt and Athena pipelines so we could finally see where the cloud spend was going and how much Spot versus On-Demand was actually costing us.",
         metric: "Cost visibility",
         icon: "ph:coin-bold"
       }
@@ -87,19 +87,19 @@ const experiences = [
     highlights: [
       {
         title: "DevOps AI System",
-        description: "Built automated code review system using LLMs (Ollama) for GitLab commits, Merge Requests, and failed pipelines with Python Flask backend and RabbitMQ task queuing.",
+        description: "Built a code review system that used local LLMs through Ollama to check GitLab commits, merge requests, and failed pipelines automatically. Python Flask on the backend, RabbitMQ for the task queue.",
         metric: "AI-powered reviews",
         icon: "ph:robot-bold"
       },
       {
         title: "VS Code Extension Development",
-        description: "Developed 'DevOps Toolkit' extension integrating interactive chat and automated documentation generation directly within the IDE.",
+        description: "Built a VS Code extension called 'DevOps Toolkit' with an interactive chat panel and automatic documentation generation, so people didn't have to leave their editor to use either.",
         metric: "IDE integration",
         icon: "ph:puzzle-piece-bold"
       },
       {
         title: "Infrastructure on Kubernetes",
-        description: "Set up and managed RabbitMQ, Elasticsearch, and Grafana on Kubernetes for monitoring AI analysis throughput and latency.",
+        description: "Ran RabbitMQ, Elasticsearch, and Grafana on Kubernetes to keep an eye on throughput and latency for the AI analysis pipeline.",
         metric: "K8s deployment",
         icon: "ph:cube-bold"
       }
@@ -115,31 +115,31 @@ const experiences = [
     highlights: [
       {
         title: "CI/CD Pipeline Engineering",
-        description: "Maintained and improved GitLab CI/CD pipelines for microservices. Integrated cspell for automated quality gates and scripted documentation generation.",
+        description: "Kept the GitLab CI/CD pipelines for our microservices running and made them faster over time. Added cspell as a quality gate and scripted parts of the documentation nobody wanted to write by hand.",
         metric: "Pipeline automation",
         icon: "ph:arrows-clockwise-bold"
       },
       {
         title: "Linux System Administration",
-        description: "Administered Production and Development Linux systems. Performed kernel updates, performance tuning, and security hardening.",
+        description: "Administered production and development Linux systems: kernel updates, performance tuning, security hardening.",
         metric: "System admin",
         icon: "ph:terminal-window-bold"
       },
       {
         title: "Monitoring & Observability",
-        description: "Architected monitoring solutions using Prometheus, Grafana, and ELK Stack. Created custom dashboards and implemented log rotation policies within Kubernetes.",
+        description: "Set up monitoring with Prometheus, Grafana, and the ELK stack, built custom dashboards, and wrote log rotation policies for Kubernetes so logs stopped filling up the disks.",
         metric: "Full observability",
         icon: "ph:chart-line-bold"
       },
       {
         title: "RAG-Based DevOps Agent",
-        description: "Developed Retrieval-Augmented Generation agent using vector embeddings and semantic search to streamline internal issue resolution.",
+        description: "Built a retrieval-augmented generation agent with vector embeddings and semantic search, so the team could find how a past issue was solved instead of solving it again from scratch.",
         metric: "Semantic search",
         icon: "ph:brain-bold"
       },
       {
         title: "Database & Dependency Management",
-        description: "Conducted automated dependency audits (version/license tracking) for PostgreSQL databases, integrated directly into CI pipelines.",
+        description: "Set up automated dependency audits for our PostgreSQL setups, tracking versions and licenses, wired directly into the CI pipelines.",
         metric: "Package auditing",
         icon: "ph:package-bold"
       }
@@ -155,13 +155,13 @@ const experiences = [
     highlights: [
       {
         title: "CI/CD Improvements",
-        description: "Contributed to GitLab CI/CD improvements and implemented Microsoft Teams notifications for pipeline statuses.",
+        description: "Helped improve the GitLab CI/CD pipelines and added Microsoft Teams notifications for pipeline status, so people stopped refreshing the pipeline page every five minutes.",
         metric: "Pipeline notifications",
         icon: "ph:bell-bold"
       },
       {
         title: "Automation Scripts",
-        description: "Automated dependency audits using Bash scripts, gaining foundational experience in DevOps workflows and Linux environments.",
+        description: "Automated dependency audits using Bash scripts. This was my first real hands-on work with DevOps workflows and Linux systems.",
         metric: "Bash scripting",
         icon: "ph:terminal-bold"
       }
@@ -179,7 +179,7 @@ const experiences = [
         Work experience
       </h2>
       <p class="text-ink-600 leading-relaxed">
-        Building infrastructure and developer platforms at scale.
+        What I've worked on at Getir and P.I. Works since 2023.
       </p>
     </div>
 
