@@ -11,37 +11,37 @@ const experiences = [
     type: "current",
     highlights: [
       {
-        title: "Karpenter Cost Optimization",
-        description: "Retuned Karpenter cluster-wide: new NodePools, consolidation policies (WhenUnderutilized + WhenEmpty), and a reworked Spot/On-Demand split in production.",
-        metric: "~30% cost cut",
+        title: "Zero-Downtime Kubernetes Upgrades",
+        description: "Planned and executed sequential Kubernetes upgrades across five production EKS clusters, resolving version drift while keeping high-traffic workloads available throughout.",
+        metric: "5 EKS clusters",
+        icon: "ph:arrows-clockwise-bold"
+      },
+      {
+        title: "Karpenter Capacity Optimization",
+        description: "Retuned NodePool and EC2NodeClass capacity, disruption, and consolidation policies alongside scheduling constraints and PodDisruptionBudgets to stabilize provisioning and scale-in.",
+        metric: "Stable scale-in",
         icon: "ph:coin-bold"
       },
       {
-        title: "Blue-Green Node Migration",
-        description: "Moved about 1000 nodes from the old NodePools to the new ones using a blue-green strategy, Bash automation, and a nightly cron job that drained nodes overnight. Nobody outside the team noticed it happened.",
-        metric: "~1000 nodes",
-        icon: "ph:arrows-left-right-bold"
-      },
-      {
         title: "Karpenter on EKS Fargate",
-        description: "Moved the Karpenter controllers themselves onto EKS Fargate across 5 clusters, which retired about 50 always-on management nodes we no longer needed. Had to work out the IAM roles, Fargate profiles, and HA tolerations from scratch.",
-        metric: "5 clusters",
+        description: "Moved Karpenter controllers from dedicated managed node groups to EKS Fargate, removing their bootstrap dependency and eliminating dedicated always-on capacity maintained solely for the controllers.",
+        metric: "Lower platform overhead",
         icon: "ph:cube-bold"
       },
       {
-        title: "Observability Pipeline",
-        description: "Built a Fargate-native logging pipeline for Karpenter and control-plane logs: CloudWatch to Kinesis Firehose to New Relic. Added dashboards and Slack alerts so on-call finds out before a user does.",
-        metric: "Proactive alerting",
-        icon: "ph:chart-line-bold"
+        title: "Policy as Code Before Sync",
+        description: "Contributed to Argo Guard, validating rendered manifests with Conftest and OPA before Argo CD sync. This removed an admission webhook from the API request path, reducing operational overhead and webhook-related deployment risk.",
+        metric: "Safer delivery",
+        icon: "ph:shield-check-bold"
       },
       {
         title: "Multi-Cluster Segregation",
-        description: "Split Kubernetes clusters by business vertical, Payment and Marketplace, so a problem in one can't take down the other. Used ArgoCD's App of Apps pattern to manage deployments across all of them from one place.",
-        metric: "Vertical isolation",
+        description: "Led workload segregation by business domain to strengthen fault isolation and operational independence, using Argo CD's App of Apps pattern for consistent multi-cluster delivery.",
+        metric: "Domain isolation",
         icon: "ph:stack-bold"
       }
     ],
-    technologies: ["Karpenter", "EKS Fargate", "ArgoCD", "New Relic", "Kinesis Firehose", "CloudWatch", "Bash", "Kubernetes"]
+    technologies: ["Kubernetes", "EKS", "Karpenter", "EKS Fargate", "Argo CD", "OPA", "Conftest", "KrakenD"]
   },
   {
     company: "Getir",
@@ -53,25 +53,25 @@ const experiences = [
     highlights: [
       {
         title: "Bitbucket to GitHub Migration",
-        description: "Moved 4000+ repositories from Bitbucket to GitHub with Go and Bash scripts I wrote for the migration. Along the way, built reusable GitHub Actions workflows, switched to AWS OIDC instead of long-lived credentials, and rolled out CodeQL rulesets company-wide.",
-        metric: "4000+ repos",
+        description: "Automated the migration of 4,000+ repositories from Bitbucket to GitHub with Go and Bash, including repository configuration, CI/CD onboarding, and Argo CD manifest-repository synchronization.",
+        metric: "4,000+ repos",
         icon: "ph:arrows-left-right-bold"
       },
       {
         title: "Internal Developer Platform",
-        description: "Built 'Kitchen,' Getir's internal developer platform, on top of Backstage. Teams scaffold microservices, provision Vault and ECR, and set up ArgoCD and CI themselves, in one click, instead of filing a ticket and waiting.",
-        metric: "400+ developers",
+        description: "Built Kitchen, Getir’s Backstage-based internal developer platform, with self-service templates for service scaffolding, ECR and Vault provisioning, database connectivity, and Argo CD/CI onboarding.",
+        metric: "Self-service delivery",
         icon: "ph:wrench-bold"
       },
       {
         title: "GitOps & Infrastructure",
-        description: "Managed ArgoCD across multiple clusters, wrote the AWS CDK and Terraform modules behind them, and moved our Terraform workflows to Atlantis, so changes get approved through a pull request instead of someone running apply from their laptop.",
-        metric: "Multi-cluster",
+        description: "Migrated Terraform workflows to Atlantis for PR-based approvals, resolving state-lock concurrency issues while maintaining Terraform modules and reviewing AWS CDK changes.",
+        metric: "Governed IaC",
         icon: "ph:cube-bold"
       },
       {
         title: "Security & Cost Optimization",
-        description: "Rolled out the Falcon-KAC admission controller through GitOps, then set up OpenCost with Kubeadapt and Athena pipelines so we could finally see where the cloud spend was going and how much Spot versus On-Demand was actually costing us.",
+        description: "Implemented OpenCost and Kubeadapt with SSO plus Athena cost pipelines for Spot/On-Demand analysis, creating the visibility needed for node-pool optimization.",
         metric: "Cost visibility",
         icon: "ph:coin-bold"
       }
