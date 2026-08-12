@@ -1,6 +1,7 @@
 ---
 // Footer component
 import { Icon } from 'astro-icon/components';
+import LogoMark from './LogoMark.astro';
 
 const currentYear = new Date().getFullYear();
 
@@ -25,9 +26,7 @@ const quickLinks = [
       {/* Brand */}
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-ink-950 flex items-center justify-center">
-            <span class="text-white font-display font-bold text-sm">AT</span>
-          </div>
+          <LogoMark class="w-10 h-10" />
           <div>
             <div class="font-display font-bold text-ink-950">Alper Torun</div>
             <div class="text-sm text-ink-500">Platform Engineer</div>
