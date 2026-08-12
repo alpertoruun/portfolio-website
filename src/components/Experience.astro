@@ -6,38 +6,38 @@ const experiences = [
   {
     company: "Getir",
     role: "Platform & Infrastructure Engineer II",
-    period: "January 2026 - Present",
+    period: "January 2026 - August 2026",
     location: "Izmir, Turkey (Hybrid)",
-    type: "current",
+    type: "recent",
     highlights: [
       {
         title: "Zero-Downtime Kubernetes Upgrades",
         description: "Planned and executed sequential Kubernetes upgrades across five production EKS clusters, resolving version drift while keeping high-traffic workloads available throughout.",
-        metric: "5 EKS clusters",
+        metric: "Zero downtime",
         icon: "ph:arrows-clockwise-bold"
       },
       {
         title: "Karpenter Capacity Optimization",
         description: "Retuned NodePool and EC2NodeClass capacity, disruption, and consolidation policies alongside scheduling constraints and PodDisruptionBudgets to stabilize provisioning and scale-in.",
-        metric: "Stable scale-in",
+        metric: "Reliable provisioning",
         icon: "ph:coin-bold"
       },
       {
         title: "Karpenter on EKS Fargate",
         description: "Moved Karpenter controllers from dedicated managed node groups to EKS Fargate, removing their bootstrap dependency and eliminating dedicated always-on capacity maintained solely for the controllers.",
-        metric: "Lower platform overhead",
+        metric: "No controller-only nodes",
         icon: "ph:cube-bold"
       },
       {
         title: "Policy as Code Before Sync",
         description: "Contributed to Argo Guard, validating rendered manifests with Conftest and OPA before Argo CD sync. This removed an admission webhook from the API request path, reducing operational overhead and webhook-related deployment risk.",
-        metric: "Safer delivery",
+        metric: "No admission webhook",
         icon: "ph:shield-check-bold"
       },
       {
         title: "Multi-Cluster Segregation",
         description: "Led workload segregation by business domain to strengthen fault isolation and operational independence, using Argo CD's App of Apps pattern for consistent multi-cluster delivery.",
-        metric: "Domain isolation",
+        metric: "Stronger fault isolation",
         icon: "ph:stack-bold"
       }
     ],
@@ -59,20 +59,20 @@ const experiences = [
       },
       {
         title: "Internal Developer Platform",
-        description: "Built Kitchen, Getir’s Backstage-based internal developer platform, with self-service templates for service scaffolding, ECR and Vault provisioning, database connectivity, and Argo CD/CI onboarding.",
-        metric: "Self-service delivery",
+        description: "Built a Backstage-based internal developer platform with self-service templates for service scaffolding, ECR and Vault provisioning, database connectivity, and Argo CD/CI onboarding.",
+        metric: "Self-service onboarding",
         icon: "ph:wrench-bold"
       },
       {
         title: "GitOps & Infrastructure",
         description: "Migrated Terraform workflows to Atlantis for PR-based approvals, resolving state-lock concurrency issues while maintaining Terraform modules and reviewing AWS CDK changes.",
-        metric: "Governed IaC",
+        metric: "PR-based controls",
         icon: "ph:cube-bold"
       },
       {
         title: "Security & Cost Optimization",
         description: "Implemented OpenCost and Kubeadapt with SSO plus Athena cost pipelines for Spot/On-Demand analysis, creating the visibility needed for node-pool optimization.",
-        metric: "Cost visibility",
+        metric: "Actionable cost data",
         icon: "ph:coin-bold"
       }
     ],
@@ -87,20 +87,20 @@ const experiences = [
     highlights: [
       {
         title: "DevOps AI System",
-        description: "Built a code review system that used local LLMs through Ollama to check GitLab commits, merge requests, and failed pipelines automatically. Python Flask on the backend, RabbitMQ for the task queue.",
-        metric: "AI-powered reviews",
+        description: "Built an LLM-assisted code-review service with Ollama, Python Flask, and RabbitMQ to generate feedback for GitLab commits, merge requests, and failed pipelines.",
+        metric: "Automated feedback",
         icon: "ph:robot-bold"
       },
       {
         title: "VS Code Extension Development",
-        description: "Built a VS Code extension called 'DevOps Toolkit' with an interactive chat panel and automatic documentation generation, so people didn't have to leave their editor to use either.",
-        metric: "IDE integration",
+        description: "Developed a VS Code extension with an interactive AI chat panel and automated documentation generation, bringing both workflows directly into the editor.",
+        metric: "In-editor workflow",
         icon: "ph:puzzle-piece-bold"
       },
       {
         title: "Infrastructure on Kubernetes",
-        description: "Ran RabbitMQ, Elasticsearch, and Grafana on Kubernetes to keep an eye on throughput and latency for the AI analysis pipeline.",
-        metric: "K8s deployment",
+        description: "Deployed RabbitMQ, Elasticsearch, and Grafana on Kubernetes to operate and observe the AI analysis pipeline's throughput and latency.",
+        metric: "Observable pipeline",
         icon: "ph:cube-bold"
       }
     ],
@@ -115,32 +115,32 @@ const experiences = [
     highlights: [
       {
         title: "CI/CD Pipeline Engineering",
-        description: "Kept the GitLab CI/CD pipelines for our microservices running and made them faster over time. Added cspell as a quality gate and scripted parts of the documentation nobody wanted to write by hand.",
-        metric: "Pipeline automation",
+        description: "Built and improved reusable GitLab CI/CD pipelines for microservices, adding quality gates, caching, artifacts, and automated documentation to make delivery more consistent.",
+        metric: "Reusable delivery",
         icon: "ph:arrows-clockwise-bold"
       },
       {
         title: "Linux System Administration",
         description: "Administered production and development Linux systems: kernel updates, performance tuning, security hardening.",
-        metric: "System admin",
+        metric: "Hardened systems",
         icon: "ph:terminal-window-bold"
       },
       {
         title: "Monitoring & Observability",
-        description: "Set up monitoring with Prometheus, Grafana, and the ELK stack, built custom dashboards, and wrote log rotation policies for Kubernetes so logs stopped filling up the disks.",
-        metric: "Full observability",
+        description: "Implemented Prometheus, Grafana, and ELK observability with custom dashboards and Kubernetes log lifecycle policies, improving visibility and preventing disk exhaustion.",
+        metric: "Faster diagnosis",
         icon: "ph:chart-line-bold"
       },
       {
         title: "RAG-Based DevOps Agent",
-        description: "Built a retrieval-augmented generation agent with vector embeddings and semantic search, so the team could find how a past issue was solved instead of solving it again from scratch.",
-        metric: "Semantic search",
+        description: "Built a retrieval-augmented knowledge assistant with vector embeddings and semantic search to make previously solved operational issues discoverable and reusable.",
+        metric: "Reusable knowledge",
         icon: "ph:brain-bold"
       },
       {
         title: "Database & Dependency Management",
-        description: "Set up automated dependency audits for our PostgreSQL setups, tracking versions and licenses, wired directly into the CI pipelines.",
-        metric: "Package auditing",
+        description: "Automated dependency version and license tracking with PostgreSQL-backed workflows integrated into CI pipelines.",
+        metric: "Continuous compliance",
         icon: "ph:package-bold"
       }
     ],
@@ -155,14 +155,14 @@ const experiences = [
     highlights: [
       {
         title: "CI/CD Improvements",
-        description: "Helped improve the GitLab CI/CD pipelines and added Microsoft Teams notifications for pipeline status, so people stopped refreshing the pipeline page every five minutes.",
-        metric: "Pipeline notifications",
+        description: "Improved GitLab CI/CD pipelines and added Microsoft Teams status notifications to shorten feedback loops and increase delivery visibility.",
+        metric: "Faster feedback",
         icon: "ph:bell-bold"
       },
       {
         title: "Automation Scripts",
-        description: "Automated dependency audits using Bash scripts. This was my first real hands-on work with DevOps workflows and Linux systems.",
-        metric: "Bash scripting",
+        description: "Built Bash automation for repeatable dependency audits while supporting Linux-based development and delivery workflows.",
+        metric: "Repeatable audits",
         icon: "ph:terminal-bold"
       }
     ],
@@ -179,7 +179,7 @@ const experiences = [
         Work experience
       </h2>
       <p class="text-ink-600 leading-relaxed">
-        What I've worked on at Getir and P.I. Works since 2023.
+        A progression from delivery automation to operating production platforms at scale.
       </p>
     </div>
 
