@@ -3,19 +3,18 @@
 import { Icon } from 'astro-icon/components';
 
 const featured = {
-  title: "Scalable Voting System",
-  subtitle: "AWS Voting App",
-  description: "Engineered a voting system with biometric authentication using face recognition. Implemented liveness detection with OpenCV and MediaPipe, and built the AWS ECS infrastructure with AutoScaling policies.",
-  icon: "ph:check-square-bold",
-  technologies: ["AWS ECS", "Python Flask", "OpenCV", "PostgreSQL", "Docker", "CloudWatch"],
+  title: "Argo Guard",
+  subtitle: "Pre-deployment Policy Guardrails for Argo CD",
+  description: "An open-source Argo CD Config Management Plugin that validates rendered Kustomize manifests before they reach a cluster. It keeps policy enforcement in the GitOps render path, protecting running workloads and the Kubernetes control plane from admission-webhook failures.",
+  icon: "ph:shield-check-bold",
+  technologies: ["Go", "Argo CD", "Kustomize", "Conftest", "Rego", "Kubernetes"],
   features: [
-    "Face recognition with liveness detection",
-    "AutoScaling based on CloudWatch metrics",
-    "JWT authentication with secure backend",
-    "Nginx reverse proxy configuration"
+    "Pre-deployment validation inside argocd-repo-server",
+    "Layered policies scoped by trusted application context",
+    "Fail-closed behavior with readable Argo CD reports",
+    "No policy webhook in the cluster admission path"
   ],
-  githubUrl: "https://github.com/alpertoruun/VotingAppwithDockerandAWS",
-  period: "2024 - 2025",
+  githubUrl: "https://github.com/ahmetozer/argo-guard",
 };
 
 const projects = [
@@ -25,7 +24,7 @@ const projects = [
     description: "An LLM-assisted review service for GitLab commits, merge requests, and failed pipelines, complemented by a VS Code extension that brings feedback into the editor.",
     icon: "ph:robot-bold",
     technologies: ["Python Flask", "RabbitMQ", "Ollama", "Elasticsearch"],
-    status: "professional"
+    status: "Professional"
   },
   {
     title: "Internal Developer Platform",
@@ -33,15 +32,15 @@ const projects = [
     description: "A Backstage-based platform for self-service service scaffolding, Vault and ECR provisioning, and automated Argo CD and CI onboarding.",
     icon: "ph:cooking-pot-bold",
     technologies: ["Backstage.io", "TypeScript", "Vault", "ArgoCD"],
-    status: "professional"
+    status: "Professional"
   },
   {
-    title: "Argo Guard",
-    subtitle: "GitOps Policy as Code",
-    description: "An open-source Argo CD Config Management Plugin that checks rendered manifests with Conftest and OPA before sync—keeping policy enforcement out of the Kubernetes API request path.",
-    icon: "ph:shield-check-bold",
-    technologies: ["Argo CD", "Open Policy Agent", "Conftest", "Kubernetes"],
-    status: "professional"
+    title: "Scalable Voting System",
+    subtitle: "AWS Voting App",
+    description: "A containerized voting application with biometric authentication, OpenCV and MediaPipe liveness detection, PostgreSQL, and autoscaling infrastructure on AWS ECS.",
+    icon: "ph:check-square-bold",
+    technologies: ["AWS ECS", "Python Flask", "OpenCV", "PostgreSQL"],
+    status: "Personal project"
   }
 ];
 ---
@@ -108,7 +107,7 @@ const projects = [
           <div class="w-12 h-12 rounded-xl bg-ink-100 flex items-center justify-center text-ink-800 mb-4">
             <Icon name={project.icon} class="w-6 h-6" />
           </div>
-          <span class="text-xs font-medium text-accent mb-1">Professional</span>
+          <span class="text-xs font-medium text-accent mb-1">{project.status}</span>
           <h3 class="text-base font-bold text-ink-950 mb-1">{project.title}</h3>
           <p class="text-xs text-ink-500 mb-3">{project.subtitle}</p>
           <p class="text-sm text-ink-600 leading-relaxed mb-4 flex-1">{project.description}</p>
